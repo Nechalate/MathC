@@ -18,7 +18,9 @@ int main()
     {2, 3, 6, 5, 2, 6, 8},
     {1, 1, 7, 2, 3, 7, 9},
     {6, 7, 2, 5, 3, 9, 6}};
-
+    
+    cout << "Задание 3" << endl;
+    
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
             cout << array[i][j] << " ";
@@ -41,7 +43,25 @@ int main()
         }
     }
     
+    cout << "Задание 4" << endl;
+    
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = i + 1; j < COLS; j++) {
+            int tmp = array[i][j];
+            array[i][j] = array[j][i];
+            array[j][i] = tmp;
+        }
+    }
+    
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            cout << array[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
     cout << endl;
 }
+
 
 
