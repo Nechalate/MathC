@@ -1,28 +1,43 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
-const int ALPH_num = 25;
-const int ALPH_start = 65;
-const int ALPH_end = 97;
-
 int main()
 {
+    int index = 0;
+    int shift;
     string text;
-    int numOfShift;
-    
-    cin >> text;
-    cin >> numOfShift;
-    
-    for (int i = 0; i < text.length(); i++) {
-        if (text[i] >= ALPH_start && text[i] <= ALPH_start + ALPH_num ||
-        text[i] >= ALPH_end && text[i] <= ALPH_start + ALPH_num) {
-            text[i] =+ text[i] + numOfShift;
-        }
-    }
 
-    cout << text;
+    cout << "Enter the text" << endl;
+    getline(cin, text);
+    cout << "Enter the num" << endl;
+    cin >> shift;
+    cout << "The result: ";
+
+    const int number = text.length();
+    char cipher[number - 1] = {};
+    for (int i = 0; i < number; i++)
+    {
+        int symbol = text[index];
+        symbol += shift;
+        cipher[index] = symbol;
+        index += 1;
+    }
+        cout << cipher << endl;
+        cout << "decoder: " << endl;
+        
+        int amount = strlen(cipher);
+        char decipher[amount] = {};
+        index = 0;
+        for (int a = 0; a < amount; a++) {
+            int mark = cipher[index];
+            mark -= shift;
+            decipher[index] = mark;
+            cout << decipher[index];
+            index += 1;
+        }
     
     return 0;
 }
