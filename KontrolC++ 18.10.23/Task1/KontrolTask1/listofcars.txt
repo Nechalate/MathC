@@ -1,0 +1,3 @@
+Ferrari Russia 2002 2.5 10 3.41231e+07 70
+Lada British 1992 3 23 1.00323e+06 23
+Mashine Gotem 2233 2 13 233423 2
